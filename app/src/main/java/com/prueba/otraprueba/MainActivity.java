@@ -15,4 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i(TAG, "Estoy en Oncreate");
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 }
