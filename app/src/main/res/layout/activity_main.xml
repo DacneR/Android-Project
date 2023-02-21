@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--Titulo -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -15,7 +16,9 @@
         android:textSize="20sp"
         android:textAlignment="center"
         />
+    <!--Fin Titulo -->
 
+    <!--Lado 1 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -24,18 +27,23 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:text="@string/name"
+            android:text="@string/sideOne"
             android:textSize="25sp">
 
         </TextView>
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/ladoUno"
+            android:hint="@string/sideOne">
 
         </EditText>
     </LinearLayout>
+    <!--Fin Lado 1 -->
 
+
+    <!--Fin Lado 2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -44,44 +52,40 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:text="@string/lastname"
+            android:text="@string/sideTwo"
             android:textSize="25sp">
 
         </TextView>
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:text="@string/age"
-            android:textSize="25sp">
-
-        </TextView>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:id="@+id/ladoDos"
+            android:hint="@string/sideTwo">
 
         </EditText>
     </LinearLayout>
+    <!--Fin Lado 2 -->
 
+    <!--Resultado -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:text="@string/result"
+        android:id="@+id/resultado">
+
+    </TextView>
+    <!--Fin Resultado -->
+
+    <!--Calcular-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="@string/getinto">
+        android:text="@string/calculate"
+        android:textSize="25sp"
+        android:id="@+id/calcular">
 
     </Button>
-
+    <!--Fin Calcular-->
 
 </LinearLayout>
