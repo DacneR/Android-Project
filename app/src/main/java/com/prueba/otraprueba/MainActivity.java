@@ -2,6 +2,7 @@ package com.prueba.otraprueba;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,13 +38,15 @@ public class MainActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*obtengo los valores de esos objetos y almaceno en variables float*/
+                /*
+                //obtengo los valores de esos objetos y almaceno en variables float
                 float lado1 = Float.parseFloat(sideOne.getText().toString());
                 float lado2 = Float.parseFloat(sideTwo.getText().toString());
 
-                /*se hace el calculo para imprimir resultado en el textView*/
+                //se hace el calculo para imprimir resultado en el textView
                 float resultado = lado1*lado2;
-                result.setText(String.valueOf(resultado));
+                result.setText(String.valueOf(resultado));*/
+                enviarDatos(view);
 
             }
         });
@@ -78,4 +81,40 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i(TAG, "Entrè a OnDestrory");
     }
+
+    /*
+    //envío un parámetro mediante una función
+    public void gotAct(View view){
+        String correo = "clasegamil.com";
+
+        //selecciono y creo la segunda pantalla que recibe
+        Intent pasarDato = new Intent(this,segundaPantalla.class);
+
+        //uso el intent para almacenar el dato
+        pasarDato.putExtra("email",correo);
+
+        //ejecuto el intent
+        startActivity(pasarDato);
+    }*/
+
+
+    public void enviarDatos(View view){
+        float l1 = Float.parseFloat(sideOne.getText().toString());
+        float l2 = Float.parseFloat(sideTwo.getText().toString());
+        float resultado = l1*l2;
+
+        Intent pasarDato = new Intent(this,segundaPantalla.class);
+
+        pasarDato.putExtra("lado1",l1);
+        pasarDato.putExtra("lado2",l2);
+        pasarDato.putExtra("resultado",resultado);
+
+        startActivity(pasarDato);
+
+
+    }
+
+
+
+
 }
