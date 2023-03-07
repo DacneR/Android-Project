@@ -6,4 +6,6 @@
     <string name="getInto">Ingresar</string>
     <string name="result">El resultado es:</string>
     <string name="calculate">Calular</string>
+    <string name="AbrirGoogle">Abrir google</string>
+    <string name="call">llamar</string>
 </resources>

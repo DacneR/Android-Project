@@ -88,4 +88,26 @@
     </Button>
     <!--Fin Calcular-->
 
+    <!--Google-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/AbrirGoogle"
+        android:textSize="25sp"
+        android:id="@+id/gg">
+
+    </Button>
+    <!--Fin Google-->
+
+    <!--llamar-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/call"
+        android:textSize="25sp"
+        android:id="@+id/call">
+
+    </Button>
+    <!--Fin Llamar-->
+
 </LinearLayout>

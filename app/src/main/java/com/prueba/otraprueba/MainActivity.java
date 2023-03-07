@@ -3,6 +3,7 @@ package com.prueba.otraprueba;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
     TextView result;
     Button calculate;
 
+    Button AbrirG;
+
+    Button Llamar;
+
+    String phoneNumber = "3004411700";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         sideTwo = findViewById(R.id.ladoDos);
         result = findViewById(R.id.resultado);
         calculate = findViewById(R.id.calcular);
+        AbrirG = findViewById(R.id.gg);
+        Llamar = findViewById(R.id.call);
     }
 
     @Override
@@ -50,7 +60,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        AbrirG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actividaddos(view);
+            }
+        });
+
+        Llamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                irALlamar(view);
+            }
+        });
     }
+
+
+
 
     @Override
     protected void onRestart() {
@@ -113,6 +142,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void actividaddos(View view)
+    {
+        Intent irAGoogle = new Intent(Intent.ACTION_VIEW);
+        irAGoogle.setData(Uri.parse("https://www.google.com"));
+
+        startActivity(irAGoogle);
+    }
+
+    public void irALlamar(View view)
+    {
+        Intent llamada = new Intent(Intent.ACTION_DIAL);
+        llamada.setData(Uri.parse("tel: " + phoneNumber));
+
+        //confirma si la aplicación de teléfono funciona
+        if(llamada.resolveActivity(getPackageManager())!=null)
+        {
+            startActivity(llamada);
+        }
+    }
+
 
 
 
